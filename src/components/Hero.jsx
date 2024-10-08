@@ -4,11 +4,10 @@ import { useEffect, useState } from "react";
 
 export const Hero = () => {
   const [movies, setMovies] = useState([]);
+  const [currentMovie, setCurrentMovie] = useState(0);
 
-  const movie =
-    movies.length > 0
-      ? movies[Math.floor(Math.random() * movies.length)]
-      : null;
+  // Update the current movie based on the index
+  const movie = movies.length > 0 ? movies[currentMovie] : null;
 
   useEffect(() => {
     axios
@@ -21,6 +20,17 @@ export const Hero = () => {
       });
   }, []);
 
+  // Automatically change the movie every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentMovie((prevIndex) =>
+        prevIndex === movies.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+
+    return () => clearInterval(interval); // Clear interval on component unmount
+  }, [movies]);
+
   const cutString = (str, num) => {
     if (str?.length > num) {
       return str.slice(0, num) + " ...";
@@ -30,11 +40,11 @@ export const Hero = () => {
   };
 
   return (
-    <div className="relative md:max-w-[1440px] max-w-[380px] h-[850px] text-white mx-auto">
-      <div className="w-full h-full px-2">
+    <div className="relative md:max-w-[1440px] max-w-[375px] h-[850px] text-white mx-auto ">
+      <div className="w-full md:h-full h-[450px]  ">
         {movie ? (
           <img
-            className="w-full h-full object-cover px-2"
+            className="w-full h-full object-cover "
             src={`http://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
             alt={movie.title}
           />
@@ -43,7 +53,7 @@ export const Hero = () => {
             Loading...
           </p>
         )}
-        <div className="w-full h-full absolute top-0 left-4  bg-gradient-to-r  from-black/80"></div>
+        <div className="w-full h-full absolute top-0  bg-gradient-to-r from-black/80"></div>
       </div>
 
       <div className="absolute w-full top-[60%] left-[5%] px-3">
