@@ -4,7 +4,7 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 export const Movie = ({ item }) => {
   const [like, setLike] = useState(false);
   return (
-    <div className=" w-[375px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2">
+    <div className=" w-[350px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2">
       <img
         className="w-full h-auto block"
         src={`http://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
