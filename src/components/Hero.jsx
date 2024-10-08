@@ -56,7 +56,7 @@ export const Hero = () => {
         <div className="w-full h-full absolute top-0  bg-gradient-to-r from-black/80"></div>
       </div>
 
-      <div className="absolute w-full top-[60%] left-[5%] px-3">
+      <div className="absolute w-full top-[60%]  px-3">
         {movie && (
           <div>
             <div className="md:text-4xl text-3xl pb-2 font-bold">
