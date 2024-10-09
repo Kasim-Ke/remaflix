@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const LogIn = () => {
+export const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -19,7 +19,7 @@ export const LogIn = () => {
       <div className="fixed w-full px-4 py-24 z-50">
         <div className="max-w-[450px] h-[600px] mx-auto bg-black/75 text-white">
           <div className="max-w-[320px] mx-auto py-16">
-            <h1 className="text-3xl font-bold">Log In</h1>
+            <h1 className="text-3xl font-bold">Sign Up</h1>
 
             <form className="w-full flex flex-col py-4" onSubmit={handleSubmit}>
               <input
@@ -34,12 +34,18 @@ export const LogIn = () => {
                 placeholder="Password"
                 autoComplete="current-password"
               />
+              <input
+                className="p-3 my-2 bg-gray-700 rouded"
+                type="password"
+                placeholder="Password Again"
+                autoComplete="current-password"
+              />
 
               <button
                 className=" py-3 my-6 rounded font-bold  border-[#B8001F]  bg-[#B8001F] hover:opacity-65 duration-200"
                 type="submit"
               >
-                Log In
+                Sign Up
               </button>
               <div className="flex justify-between items-center text-sm text-gray-600">
                 <p>
@@ -50,7 +56,7 @@ export const LogIn = () => {
               </div>
               <p className="py-8 ">
                 <span className="text-gray-600 hover:border-b border-gray-600 duration-200">
-                  <Link to="/signup">New to REMAFLIX?</Link>
+                  <Link to="/login">Have account REMAFLIX?</Link>
                 </span>
               </p>
               <p className="py-8 ">

@@ -6,11 +6,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { Home } from "./components/Home.jsx";
 import { LogIn } from "./components/LogIn.jsx";
+import { SignUp } from "./components/SignUp.jsx";
 
 const router = createBrowserRouter([
   { path: "/remaflix/", element: <App /> },
   { path: "/home", element: <Home /> },
   { path: "/login", element: <LogIn /> },
+  { path: "/signup", element: <SignUp /> },
 ]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>

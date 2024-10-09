@@ -14,7 +14,7 @@ export const Navbar = () => {
             <Link to="/login">Log In</Link>
           </button>
           <button className="py-2 px-5  mr-5 border-[#B8001F]  bg-[#B8001F] hover:opacity-65 duration-200">
-            <Link to="/login">Sign Up</Link>
+            <Link to="/signup">Sign Up</Link>
           </button>
         </div>
         <div className="mx-5 md:hidden block ">
