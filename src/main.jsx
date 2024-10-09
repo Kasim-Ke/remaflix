@@ -5,20 +5,13 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { Home } from "./components/Home.jsx";
+import { LogIn } from "./components/LogIn.jsx";
 
 const router = createBrowserRouter([
-  {
-    path: "/remaflix/",
-    element: <App />,
-    children: [
-      {
-        path: "/remaflix/",
-        element: <Home />,
-      },
-    ],
-  },
+  { path: "/remaflix/", element: <App /> },
+  { path: "/home", element: <Home /> },
+  { path: "/login", element: <LogIn /> },
 ]);
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
